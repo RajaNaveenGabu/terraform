@@ -89,12 +89,12 @@ resource "aws_route_table_association" "a" {
 
 
 resource "aws_route" "private" {
-  route_table_id         = aws_route_table.private-rt.id
+  route_table_id         = aws_route_table.Valhalla_private-rt.id
   destination_cidr_block = "0.0.0.0/0"
   nat_gateway_id         = aws_nat_gateway.Valhalla_ngw.id
 }
 
-resource "aws_security_group" "dev-sg" {
+resource "aws_security_group" "Valhalla_sg" {
   name   = "${var.tag}-sg"
   vpc_id = aws_vpc.Valhalla.id
 
