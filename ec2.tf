@@ -21,7 +21,7 @@ resource "aws_instance" "Valhalla" {
   ami                         = "ami-06aa3f7caf3a30282"
   instance_type               = "t2.micro"
   subnet_id                   = aws_subnet.public.id
-  vpc_security_group_ids      = ["${aws_security_group.-Valhalla_sg.id}"]
+  vpc_security_group_ids      = ["${aws_security_group.Valhalla_sg.id}"]
   key_name                    = "Valhalla-key-pair"
   associate_public_ip_address = true
   tags = {
